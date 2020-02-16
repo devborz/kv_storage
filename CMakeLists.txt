@@ -28,6 +28,8 @@ find_package(GTest CONFIG REQUIRED)
 
 add_library(kv_storage INTERFACE
 )
+add_library(PicoSHA2 INTERFACE
+)
 add_executable(tests
   ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
 )
@@ -35,9 +37,14 @@ add_executable(tests
 target_include_directories(kv_storage 
   INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
+target_include_directories(PicoSHA2
+  INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include/PicoSHA2/
+)
 target_include_directories(tests 
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
+
+target_link_libraries(kv_storage INTERFACE PicoSHA2)
 target_link_libraries(tests GTest::main kv_storage)
 
 enable_testing()
