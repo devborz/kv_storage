@@ -1,3 +1,7 @@
-// Copyright 2018 Your Name <your_email>
+// Copyright 2020 Usman Turkaev
 
-#include <header.hpp>
+#include <kv_storage.hpp>
+
+namespace kv_storage {
+    
+}
