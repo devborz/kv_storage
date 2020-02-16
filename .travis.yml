@@ -12,6 +12,8 @@ install:
   - export CXX="g++-8" CC="gcc-8"
   - git submodule init
   - git submodule update
+  - sudo apt update
+  - sudo apt install librocksdb-dev
   - cmake -H. -B_build
   - cmake --build _build
 
