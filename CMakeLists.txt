@@ -24,6 +24,10 @@ string(APPEND CMAKE_CXX_FLAGS " -Wno-unused-command-line-argument")
 string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
 
 hunter_add_package(GTest)
+hunter_add_package(Boost COMPONENTS program_options
+thread filesystem)
+find_package(Boost CONFIG REQUIRED program_options
+thread filesystem)
 find_package(GTest CONFIG REQUIRED)
 
 add_library(kv_storage INTERFACE
