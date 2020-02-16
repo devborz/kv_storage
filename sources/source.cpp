@@ -1,7 +1,6 @@
 // Copyright 2020 Usman Turkaev
-
 #include <kv_storage.hpp>
 
-namespace kv_storage {
-    
+int main(int argc, char* argv[]) {
+
 }
