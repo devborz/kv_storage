@@ -26,11 +26,12 @@ string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
 hunter_add_package(GTest)
 hunter_add_package(Boost COMPONENTS program_options
 thread filesystem)
-hunter_add_package(rocksdb)
-find_package(RocksDB CONFIG REQUIRED)
+# hunter_add_package(rocksdb)
+# find_package(RocksDB CONFIG REQUIRED)
 find_package(Boost CONFIG REQUIRED program_options
 thread filesystem)
 find_package(GTest CONFIG REQUIRED)
+find_library(ROCKSDB_LIBRARY rocksdb)
 
 add_library(kv_storage INTERFACE
 )
@@ -56,7 +57,7 @@ target_include_directories(tests
 )
 
 target_link_libraries(kv_storage INTERFACE PicoSHA2 producer_consumer
-Boost::thread Boost::program_options RocksDB::rocksdb)
+Boost::thread Boost::program_options ${ROCKSDB_LIBRARY})
 target_link_libraries(tests GTest::main kv_storage)
 
 enable_testing()
