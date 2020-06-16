@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/devborz/lab_10_kv_storage.svg?branch=master)](https://travis-ci.com/devborz/lab_10_kv_storage)
+[![Build Status](https://travis-ci.com/devborz/kv_storage.svg?branch=master)](https://travis-ci.com/devborz/kv_storage)
 # Лабораторная работа № 10
 
 ## Задание
